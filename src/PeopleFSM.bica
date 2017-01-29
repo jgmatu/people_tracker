@@ -1,0 +1,15 @@
+<component id="PeopleFSM">
+ <state x="-398" y="-593" initial="false" id="training">
+  <activation id="people_tracker"/>
+ </state>
+ <state x="-733" y="-596" initial="true" id="initial">
+  <activation id="people_tracker"/>
+ </state>
+ <state x="-721" y="-334" initial="false" id="ready"/>
+ <state x="-391" y="-337" initial="false" id="lost"/>
+ <component x="-574" y="-709" id="people_tracker"/>
+ <transition src="initial" dst="training"/>
+ <transition src="lost" dst="ready"/>
+ <transition src="training" dst="ready"/>
+ <transition src="ready" dst="lost"/>
+</component>

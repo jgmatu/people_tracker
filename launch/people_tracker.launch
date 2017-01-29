@@ -1,0 +1,19 @@
+<launch>
+
+<include file="$(find command_node)/launch/command_node.launch" />
+
+<!--
+<include file="$(find dn_mapping)/launch/dynamic_map_server_arena_B.launch" />
+<include file="$(find dn_navigation)/launch/rb1.launch" />
+-->
+
+<include file="$(find dialogue_sandbox)/launch/dialogue_inspection.launch" />
+
+ 
+<node pkg="people_tracker" type = "followpeople_test_node" name="people_test" output="screen"/>
+<node pkg= "people_tracker" type = "people_tracker_node" name= "people_node" output="screen"/>
+<node pkg="bica_core" type = "launcher" name="launcher" output="screen" args = "people_test people_node"/>	
+
+<node pkg="rviz" type="rviz" name="rviz"/>
+
+</launch>

@@ -1,0 +1,11 @@
+<launch>
+
+	
+   	<arg name="init_component" default="Ejemplo_basico_dialogo" />
+  	<node pkg="bica" type="bica_node" name="bica" output="screen">
+		<param name="init_component" type="string" value="$(arg init_component)" />
+		<param name="location_file" type="string" value="$(find bica)/configuration_files/locations.json" />
+	</node>
+
+
+</launch>

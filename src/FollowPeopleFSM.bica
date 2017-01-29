@@ -1,0 +1,28 @@
+<component id="FollowPeopleFSM">
+ <state x="-561" y="-332" initial="false" id="Following">
+  <activation id="people_node"/>
+  <activation id="navigator"/>
+ </state>
+ <state x="-793" y="-196" initial="false" id="Lost">
+  <activation id="people_node"/>
+ </state>
+ <state x="-1042" y="-553" initial="true" id="Initial"/>
+ <state x="-1117" y="-77" initial="false" id="Finish"/>
+ <state x="-807" y="-549" initial="false" id="Training">
+  <activation id="people_node"/>
+ </state>
+ <state x="-575" y="-543" initial="false" id="StopTraining">
+  <activation id="people_node"/>
+ </state>
+ <state x="-863" y="-51" initial="false" id="Returning"/>
+ <component x="-822" y="-358" id="people_node"/>
+ <component x="-368" y="-330" id="navigator"/>
+ <transition src="Following" dst="Lost"/>
+ <transition src="Initial" dst="Training"/>
+ <transition src="Following" dst="Returning"/>
+ <transition src="Training" dst="StopTraining"/>
+ <transition src="StopTraining" dst="Training"/>
+ <transition src="Lost" dst="Following"/>
+ <transition src="Returning" dst="Finish"/>
+ <transition src="StopTraining" dst="Following"/>
+</component>
