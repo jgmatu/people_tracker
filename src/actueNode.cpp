@@ -123,7 +123,7 @@ publish_vel (ros::Publisher& turtle_vel , tf::TransformBroadcaster& br , const t
 	float angle_map = atan2 (map2peopleStmp.getOrigin().y() , map2peopleStmp.getOrigin().x());
 	float dist_map  = sqrt  (map2peopleStmp.getOrigin().x() * map2peopleStmp.getOrigin().x() + map2peopleStmp.getOrigin().y() * map2peopleStmp.getOrigin().y());
 
-//	angular.setReference(angle_bf);
+ 	//	angular.setReference(angle_bf);
 //	linear.setReference(dist_bf);
 
 	cmdVel.angular.x = 0.0;
